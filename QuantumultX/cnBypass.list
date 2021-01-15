@@ -1,0 +1,3 @@
+host-suffix, cn, direct
+geoip, jp, jpGate SSID
+geoip, us, usGate SSID

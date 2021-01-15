@@ -1,0 +1,40 @@
+mixed-port: 7890
+
+
+dns:
+  enable: true
+  use-hosts: true
+  enhanced-mode: fake-ip
+  fake-ip-filter:
+    - '*local*'
+    - '*.cn'
+  nameserver:
+    - 114.114.115.115
+    - 180.76.76.76
+  fallback:
+    - 'tls://dns.google'
+    - 'dns.opendns.com:443'
+  
+  
+proxies: ~
+
+proxy-groups: ~
+
+rules:
+  - DOMAIN-KEYWORD, analyt, REJECT
+  - DOMAIN-SUFFIX, cn, DIRECT
+  - IP-CIDR, 0.0.0.0/8, DIRECT
+  - IP-CIDR, 10.0.0.0/8, DIRECT
+  - IP-CIDR, 100.64.0.0/10, DIRECT
+  - IP-CIDR, 127.0.0.0/8, DIRECT
+  - IP-CIDR, 169.254.0.0/16, DIRECT
+  - IP-CIDR, 172.16.0.0/12, DIRECT
+  - IP-CIDR, 192.0.0.0/8, DIRECT
+  - IP-CIDR, 198.18.0.0/15, DIRECT
+  - IP-CIDR, 198.51.100.0/24, DIRECT
+  - IP-CIDR, 203.0.113.0/24, DIRECT
+  - IP-CIDR, 224.0.0.0/3, DIRECT
+  - GEOIP, JP, jpGate Switch
+  - GEOIP, US, usGate Switch
+  - GEOIP, CN, DIRECT
+  - MATCH, hkGate Switch

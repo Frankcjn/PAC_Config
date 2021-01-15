@@ -1,0 +1,24 @@
+https:\/\/.*\.csdn\.net\/.* url script-response-body https://raw.githubusercontent.com/Frankcjn/Shadow_Config/master/QuantumultX/userJS/%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87.user.js
+.*:\/\/.*\.github\.io\/.* url script-response-body https://raw.githubusercontent.com/Frankcjn/Shadow_Config/master/QuantumultX/userJS/%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87.user.js
+.*:\/\/.*\.xz577\.com\/.* url script-response-body https://raw.githubusercontent.com/Frankcjn/Shadow_Config/master/QuantumultX/userJS/%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87.user.js
+.*:\/\/.*\.javascriptcn\.com\/.* url script-response-body https://raw.githubusercontent.com/Frankcjn/Shadow_Config/master/QuantumultX/userJS/%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87.user.js
+.*:\/\/.*\.iteye\.com\/.* url script-response-body https://raw.githubusercontent.com/Frankcjn/Shadow_Config/master/QuantumultX/userJS/%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87.user.js
+.*:\/\/.*\.720ui\.com\/.* url script-response-body https://raw.githubusercontent.com/Frankcjn/Shadow_Config/master/QuantumultX/userJS/%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87.user.js
+.*:\/\/cloud\.tencent\.com\/.* url script-response-body https://raw.githubusercontent.com/Frankcjn/Shadow_Config/master/QuantumultX/userJS/%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87.user.js
+.*:\/\/.*\.didispace\.com\/.* url script-response-body https://raw.githubusercontent.com/Frankcjn/Shadow_Config/master/QuantumultX/userJS/%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87.user.js
+.*:\/\/.*\.sina\.cn\/.* url script-response-body https://raw.githubusercontent.com/Frankcjn/Shadow_Config/master/QuantumultX/userJS/%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87.user.js
+.*:\/\/.*\.toutiao\.com\/.* url script-response-body https://raw.githubusercontent.com/Frankcjn/Shadow_Config/master/QuantumultX/userJS/%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87.user.js
+.*:\/\/3g\.163\.com\/.* url script-response-body https://raw.githubusercontent.com/Frankcjn/Shadow_Config/master/QuantumultX/userJS/%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87.user.js
+.*:\/\/.*\.inews\.qq\.com\/.* url script-response-body https://raw.githubusercontent.com/Frankcjn/Shadow_Config/master/QuantumultX/userJS/%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87.user.js
+.*:\/\/inews\.qq\.com\/.* url script-response-body https://raw.githubusercontent.com/Frankcjn/Shadow_Config/master/QuantumultX/userJS/%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87.user.js
+.*:\/\/xw\.qq\.com\/.* url script-response-body https://raw.githubusercontent.com/Frankcjn/Shadow_Config/master/QuantumultX/userJS/%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87.user.js
+.*:\/\/blog\.51cto\.com\/.* url script-response-body https://raw.githubusercontent.com/Frankcjn/Shadow_Config/master/QuantumultX/userJS/%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87.user.js
+.*:\/\/.*\.zhihu\.com\/question\/.* url script-response-body https://raw.githubusercontent.com/Frankcjn/Shadow_Config/master/QuantumultX/userJS/%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87.user.js
+.*:\/\/.*\.guokr\.com\/.* url script-response-body https://raw.githubusercontent.com/Frankcjn/Shadow_Config/master/QuantumultX/userJS/%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87.user.js
+.*:\/\/.*\.awesomes\.cn\/.* url script-response-body https://raw.githubusercontent.com/Frankcjn/Shadow_Config/master/QuantumultX/userJS/%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87.user.js
+.*:\/\/.*\.javazhiyin\.com\/.* url script-response-body https://raw.githubusercontent.com/Frankcjn/Shadow_Config/master/QuantumultX/userJS/%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87.user.js
+.*:\/\/m\.hupu\.com\/bbs\/.* url script-response-body https://raw.githubusercontent.com/Frankcjn/Shadow_Config/master/QuantumultX/userJS/%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87.user.js
+.*:\/\/wap\.peopleapp\.com\/article\/.* url script-response-body https://raw.githubusercontent.com/Frankcjn/Shadow_Config/master/QuantumultX/userJS/%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87.user.js
+.*:\/\/.*\.ifeng\.com\/c\/.* url script-response-body https://raw.githubusercontent.com/Frankcjn/Shadow_Config/master/QuantumultX/userJS/%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87.user.js
+
+hostname=*.csdn.net, *.github.io, *.xz577.com, *.javascriptcn.com, *.iteye.com, *.720ui.com, cloud.tencent.com, *.didispace.com, *.sina.cn, *.toutiao.com, 3g.163.com, *.inews.qq.com, xw.qq.com, blog.51cto.com, *.zhihu.com, *.guokr.com, *.awesomes.cn, *.javazhiyin.com, m.hupu.com, wap.peopleapp.com, *.ifeng.com

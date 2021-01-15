@@ -1,0 +1,8 @@
+host-keyword, analyt, reject
+host, id6.me, reject
+host, open.e.189.cn, reject
+host-suffix, cmpassport.com, reject
+host, nisportal.10010.com, reject
+host, opencloud.wostore.cn, reject
+host, id.mail.wo.cn, reject
+host, mesu.apple.com, reject
