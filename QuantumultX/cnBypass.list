@@ -1,2 +1,2 @@
 host-suffix, cn, direct
-geoip, us, awayGate SSID
+geoip, us, awayGate AUTO
