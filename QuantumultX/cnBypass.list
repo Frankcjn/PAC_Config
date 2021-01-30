@@ -1,3 +1,2 @@
 host-suffix, cn, direct
-geoip, jp, nearGate SSID
 geoip, us, awayGate SSID
