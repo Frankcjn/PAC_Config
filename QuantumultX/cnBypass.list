@@ -1,2 +1,2 @@
 host-suffix, cn, direct
-geoip, us, awayGate AUTO
+geoip, us, nearGate SWITCH
