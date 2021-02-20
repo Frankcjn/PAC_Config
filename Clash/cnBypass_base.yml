@@ -12,8 +12,10 @@ dns:
     - 114.114.115.115
     - 180.76.76.76
   fallback:
-    - 'tls://dns.google'
-    - 'dns.opendns.com:443'
+    - 'tls://8.8.4.4'
+    - 'tls://8.8.8.8'
+    - 208.67.220.220:443
+    - 208.67.222.222:443
   
   
 proxies: ~
@@ -23,6 +25,10 @@ proxy-groups: ~
 rules:
   - DOMAIN-KEYWORD, analyt, REJECT
   - DOMAIN-SUFFIX, cn, DIRECT
+  - DOMAIN-SUFFIX, biliapi.net, otherGate SWITCH
+  - DOMAIN-SUFFIX, bilibili.com, otherGate SWITCH
+  - DOMAIN, upos-hz-mirrorakam.akamaized.net, otherGate SWITCH
+  - DOMAIN-SUFFIX, tv.apple.com, nearGate SWITCH
   - IP-CIDR, 0.0.0.0/8, DIRECT
   - IP-CIDR, 10.0.0.0/8, DIRECT
   - IP-CIDR, 100.64.0.0/10, DIRECT
@@ -34,7 +40,6 @@ rules:
   - IP-CIDR, 198.51.100.0/24, DIRECT
   - IP-CIDR, 203.0.113.0/24, DIRECT
   - IP-CIDR, 224.0.0.0/3, DIRECT
-  - GEOIP, JP, jpGate Switch
-  - GEOIP, US, usGate Switch
+  - GEOIP, US, awayGate Switch
   - GEOIP, CN, DIRECT
-  - MATCH, hkGate Switch
+  - MATCH, nearGate Switch
