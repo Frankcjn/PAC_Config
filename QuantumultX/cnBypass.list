@@ -1,2 +1,3 @@
 host-suffix, cn, direct
+ip-cidr, 208.67.220.0/22, nearGate SWITCH
 geoip, us, awayGate SWITCH
