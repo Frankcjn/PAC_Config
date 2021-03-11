@@ -1,4 +1,4 @@
+host, store.steampowered.com, direct
 host-suffix, cn, direct
 ip-cidr, 208.67.220.0/22, nearGate SWITCH
-host-suffix, cm.steampowered.com, awayGate MANUAL
 geoip, us, awayGate SWITCH
