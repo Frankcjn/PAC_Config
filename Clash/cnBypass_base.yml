@@ -14,8 +14,8 @@ dns:
   fallback:
     - 'tls://8.8.4.4'
     - 'tls://8.8.8.8'
-    - 208.67.220.220:443
-    - 208.67.222.222:443
+    - 208.67.220.220:5353
+    - 208.67.222.222:5353
   
   
 proxies: ~
@@ -25,10 +25,8 @@ proxy-groups: ~
 rules:
   - DOMAIN-KEYWORD, analyt, REJECT
   - DOMAIN-SUFFIX, cn, DIRECT
-  - DOMAIN-SUFFIX, biliapi.net, otherGate SWITCH
-  - DOMAIN-SUFFIX, bilibili.com, otherGate SWITCH
-  - DOMAIN, upos-hz-mirrorakam.akamaized.net, otherGate SWITCH
-  - DOMAIN-SUFFIX, tv.apple.com, nearGate SWITCH
+  - IP-CIDR, 8.8.0.0/20, nearGate SWITCH
+  - IP-CIDR, 208.67.220.0/22, nearGate SWITCH
   - IP-CIDR, 0.0.0.0/8, DIRECT
   - IP-CIDR, 10.0.0.0/8, DIRECT
   - IP-CIDR, 100.64.0.0/10, DIRECT
