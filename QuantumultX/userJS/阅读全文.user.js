@@ -1,5 +1,5 @@
 /**
- * 名称：阅读全文、自动展开全文、自动移除万恶弹框.user.js
+ * 名称：阅读全文.user.js
  * 地址：https://greasyfork.org/scripts/414010-%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87-%E8%87%AA%E5%8A%A8%E5%B1%95%E5%BC%80%E5%85%A8%E6%96%87-%E8%87%AA%E5%8A%A8%E7%A7%BB%E9%99%A4%E4%B8%87%E6%81%B6%E5%BC%B9%E6%A1%86/code/%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87%E3%80%81%E8%87%AA%E5%8A%A8%E5%B1%95%E5%BC%80%E5%85%A8%E6%96%87%E3%80%81%E8%87%AA%E5%8A%A8%E7%A7%BB%E9%99%A4%E4%B8%87%E6%81%B6%E5%BC%B9%E6%A1%86.user.js
  *
  ******** 以下为 tamperJS 自动生成的 rewrite 相关信息，可能需要根据情况适当调整 ********
@@ -12,6 +12,7 @@ https:\/\/.*\.csdn\.net\/.* url script-response-body 阅读全文.user.js
 .*:\/\/.*\.iteye\.com\/.* url script-response-body 阅读全文.user.js
 .*:\/\/.*\.720ui\.com\/.* url script-response-body 阅读全文.user.js
 .*:\/\/cloud\.tencent\.com\/.* url script-response-body 阅读全文.user.js
+.*:\/\/m\.leju\.com\/.* url script-response-body 阅读全文.user.js
 .*:\/\/.*\.didispace\.com\/.* url script-response-body 阅读全文.user.js
 .*:\/\/.*\.sina\.cn\/.* url script-response-body 阅读全文.user.js
 .*:\/\/.*\.toutiao\.com\/.* url script-response-body 阅读全文.user.js
@@ -26,10 +27,13 @@ https:\/\/.*\.csdn\.net\/.* url script-response-body 阅读全文.user.js
 .*:\/\/.*\.javazhiyin\.com\/.* url script-response-body 阅读全文.user.js
 .*:\/\/m\.hupu\.com\/bbs\/.* url script-response-body 阅读全文.user.js
 .*:\/\/wap\.peopleapp\.com\/article\/.* url script-response-body 阅读全文.user.js
+.*:\/\/jingyan\.baidu\.com\/article\/.* url script-response-body 阅读全文.user.js
 .*:\/\/.*\.ifeng\.com\/c\/.* url script-response-body 阅读全文.user.js
+.*:\/\/.*\.360doc\.com\/content\/.* url script-response-body 阅读全文.user.js
+.*:\/\/www\.hi-linux\.com\/posts\/.* url script-response-body 阅读全文.user.js
 
 [mitm]
-, *.csdn.net, *.github.io, *.xz577.com, *.javascriptcn.com, *.iteye.com, *.720ui.com, cloud.tencent.com, *.didispace.com, *.sina.cn, *.toutiao.com, 3g.163.com, *.inews.qq.com, xw.qq.com, blog.51cto.com, *.zhihu.com, *.guokr.com, *.awesomes.cn, *.javazhiyin.com, m.hupu.com, wap.peopleapp.com, *.ifeng.com
+, *.csdn.net, *.github.io, *.xz577.com, *.javascriptcn.com, *.iteye.com, *.720ui.com, cloud.tencent.com, m.leju.com, *.didispace.com, *.sina.cn, *.toutiao.com, 3g.163.com, *.inews.qq.com, xw.qq.com, blog.51cto.com, *.zhihu.com, *.guokr.com, *.awesomes.cn, *.javazhiyin.com, m.hupu.com, wap.peopleapp.com, jingyan.baidu.com, *.ifeng.com, *.360doc.com, www.hi
 
  ********
  * 工具: tamperJS BY @elecV2
@@ -46,9 +50,9 @@ if (/<\/html>|<\/body>/.test(body)) {
 const elecJSPack = function(){// ==UserScript==
 // @name         阅读全文、自动展开全文、自动移除万恶弹框
 // @namespace    http://tampermonkey.net/
-// @version      2.5.2
+// @version      2.8.3
 // @require      https://greasyfork.org/scripts/415668-zmquery3-5-1/code/zmQuery351.js?version=866815
-// @description  【非自动关注】【自用，长期维护】【功能有】1. 阅读全文网站支持：CSDN、github.io、xz577.com、iteye.com、720ui.com、cloud.tencent.com、新浪、头条、网易新闻、腾讯新闻、51CTO、知乎、果壳科技（移动版）、awesomes.cn、javascriptcn.com、人民日报（移动版）、凤凰网、虎扑移动版
+// @description  【非自动关注】【自用，长期维护】【功能有】1. 阅读全文网站支持：CSDN、github.io、xz577.com、iteye.com、720ui.com、cloud.tencent.com、新浪、头条、网易新闻、腾讯新闻、51CTO、知乎、果壳科技（移动版）、awesomes.cn、javascriptcn.com、人民日报（移动版）、凤凰网、虎扑移动版、百度经验、360文档（个人图书馆）、乐居买房（移动版）
 // @author       zhengmingliang
 // @match        https://*.csdn.net/*
 // @match        *://*.github.io/*
@@ -57,6 +61,7 @@ const elecJSPack = function(){// ==UserScript==
 // @match        *://*.iteye.com/*
 // @match        *://*.720ui.com/*
 // @match        *://cloud.tencent.com/*
+// @match        *://m.leju.com/*
 // @match        *://*.didispace.com/*
 // @match        *://*.sina.cn/*
 // @match        *://*.toutiao.com/*
@@ -71,7 +76,10 @@ const elecJSPack = function(){// ==UserScript==
 // @match        *://*.javazhiyin.com/*
 // @match        *://m.hupu.com/bbs/*
 // @match        *://wap.peopleapp.com/article/*
+// @match        *://jingyan.baidu.com/article/*
 // @match        *://*.ifeng.com/c/*
+// @match        *://*.360doc.com/content/*
+// @match        *://www.hi-linux.com/posts/*
 // @grant        none
 // ==/UserScript==
 
@@ -83,17 +91,24 @@ const elecJSPack = function(){// ==UserScript==
      * @param readMoreSelector
      * @param contentSelector
      */
-    function readAllRule1(readMoreSelector, contentSelector) {
+    function readAllRule1(readMoreSelector, contentSelector,isCurrent) {
         if ($$$(readMoreSelector).length > 0) {
             console.log("检测到有阅读全文关注限制。。。。")
             // 移除阅读全文
-            $$$(readMoreSelector).parent().remove();
+            if(isCurrent){
+                $$$(readMoreSelector).remove();
+            }else {
+                $$$(readMoreSelector).parent().remove();
+            }
             // 使滚动条可见
             // $$$("#article_content").css('overflow','auto')
             // 优化后：直接将style置为空
             console.log("style:%s", $$$(contentSelector).prop('style'))
             $$$(contentSelector).prop('style', '')
             $$$(contentSelector).attr('style', '')
+            $$$(contentSelector).css('max-height', 'none')
+            $$$(contentSelector).css('height', 'auto')
+            $$$(contentSelector).css('overflow', 'visible')
             console.log("已解除阅读全文关注限制。。。。")
         }
     }
@@ -103,16 +118,16 @@ const elecJSPack = function(){// ==UserScript==
      * @param readMoreSelector
      * @param contentSelector
      */
-    function readAllRule1ByOrigin(readMoreSelector, contentSelector) {
+    function readAllRule1ByOrigin(readMoreSelector, contentSelector,removeCurrent) {
         var dom;
         var parentElement, contentElement;
         if (readMoreSelector.startsWith("#")) {
             dom = document.getElementById(readMoreSelector.substring(1))
-            parentElement = dom.parentElement;
+            parentElement = removeCurrent ? dom : dom.parentElement;
         } else if (readMoreSelector.startsWith(".")) {
             dom = document.getElementsByClassName(readMoreSelector.substring(1))
             if (dom.length > 0) {
-                parentElement = dom[0].parentElement;
+                parentElement = removeCurrent ? dom : dom[0].parentElement;
             }
 
 
@@ -261,6 +276,26 @@ const elecJSPack = function(){// ==UserScript==
 
     }
 
+    /**
+     * 对class 样式进行重写，使滚动条显示
+     */
+   function addOverflowCssStyle(cssSelector) {
+        console.log("style:%s", $$$(cssSelector).prop('style'))
+        $$$(cssSelector).prop('style', '')
+        $$$(cssSelector).attr('style', '')
+        $$$(cssSelector).css('max-height', 'none')
+        $$$(cssSelector).css('height', 'auto')
+        $$$(cssSelector).css('overflow', 'visible')
+    }
+
+    /**
+     * 对class 样式进行重写
+     */
+   function addDisplayStyle(cssSelector) {
+       $$$(cssSelector).css("display","none");
+       $$$(cssSelector).attr("style","display:none");
+    }
+
     function addDisplayCssStyle() {
        $$$("style").get(0).append("article{opacity: 1 !important;display: block !important;}" +
            "#menu li{opacity: 1;display: block;}")
@@ -396,6 +431,10 @@ const elecJSPack = function(){// ==UserScript==
         console.log("检测到github.io。。。。")
         readAllRule1("#read-more-btn", "#container")
         addDisplayCssStyle();
+    }  else if (href.indexOf('jingyan.baidu.com') != -1) { //百度经验
+        console.log("检测到百度经验。。。。")
+        readAllRule2(".read-whole-mask", ".exp-content-container.fold","fold")
+
     } else if (href.indexOf('xz577') != -1) { //www.xz577.com
         console.log("检测到xz577。。。。")
         readAllRule1(".m-zk", "#mewsmian")
@@ -411,12 +450,31 @@ const elecJSPack = function(){// ==UserScript==
     } else if (href.indexOf('720ui.com') != -1) { // 720ui.com
         console.log("检测到720ui.com。。。。")
         readAllRule1("#read-more-btn", "#main")
+    } else if (href.indexOf('360doc.com') != -1) { // 360doc
+        console.log("检测到360doc.com。。。。")
+        addOverflowCssStyle(".article_container")
+        addDisplayStyle(".article_showall")
+    } else if (href.indexOf('m.leju.com') != -1) { // 360doc
+        console.log("检测到m.leju.com。。。。")
+        let interval = setInterval(function () {
+            console.log("轮训检测...")
+            if ($$$(".ztt_more").length > 0) {
+                readAllRule1(".ztt_more", ".ztt_outer",true)
+                clearInterval(interval)
+            }
+        }, 1000)
     } else if (href.indexOf('sina.cn') != -1) { // k.sina.cn
         console.log("检测到sina.cn。。。。")
         let interval = setInterval(function () {
             console.log("轮训检测...")
             if ($$$(".unfold-btn1").length > 0) {
                 readAllRule1ByOrigin(".unfold-btn1", ".main-body")
+                clearInterval(interval)
+            }else if ($$$(".ztt_more").length > 0) {
+                readAllRule1ByOrigin(".ztt_more", ".ztt_outer",true)
+                clearInterval(interval)
+            }else if ($$$(".look_more_a").length > 0) {
+                readAllRule1ByOrigin("#artFoldBox", ".s_card z_c1",true)
                 clearInterval(interval)
             }
         }, 1000)
@@ -440,13 +498,16 @@ const elecJSPack = function(){// ==UserScript==
         
     } else if (href.indexOf('peopleapp.com') != -1) { // 3g.163.com
         console.log("检测到人民日報。。。。")
+        let count = 0;
         // 循环检测
        let interval = setInterval(function () {
             console.log("轮训检测...")
             if ($$$(".read-more-mask").length > 0) {
-                readAllRule2(".read-more-mask", ".has-more-high","has-more-high")
+                readAllRule1(".read-more-mask", ".has-more-high",)
                 $$$("#header").remove()
-                clearInterval(interval)
+                if(count++ > 10){
+                    clearInterval(interval)
+                }
             }
         }, 1000)
 
@@ -537,22 +598,30 @@ const elecJSPack = function(){// ==UserScript==
             if(".ModalWrap-body".length > 0){
                 $$$(".ModalWrap-body").prop("style","").removeClass("ModalWrap-body")
             }
+            if(".is-collapsed".length > 0){
+                $$$(".is-collapsed").removeClass("is-collapsed");
+            }
             if($$$(".RichContent-inner").length > 0){
-                $$$(".RichContent-inner").prop("style","").removeClass("RichContent-inner").removeClass("RichContent-inner--collapsed")
+                // $$$(".RichContent-inner").prop("style","").removeClass("RichContent-inner--collapsed")
+                addOverflowCssStyle(".RichContent-inner--collapsed")
+                addOverflowCssStyle(".RichContent--unescapable")
+                addOverflowCssStyle(".is-collapsed")
             }
             if ($$$(".expandButton").length > 0) {
                 console.log("移除阅读全文")
-                $$$(".expandButton").remove()
+                // $$$(".expandButton").remove()
+                addDisplayStyle(".expandButton")
             }
             if ($$$(".ContentItem-expandButton").length > 0) {
                 console.log("移除阅读全文")
-                $$$(".ContentItem-expandButton").remove()
+                // $$$(".ContentItem-expandButton").remove()
+                addDisplayStyle(".ContentItem-expandButton")
             }
             if(count++ > 100){
                 clearInterval(interval);
             }
 
-        },1000)
+        },100)
 
         $$$("style").get(0).append(".ModalWrap{display:none}");
 
