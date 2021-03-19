@@ -46,8 +46,9 @@ let body = $response.body
 if (/<\/html>|<\/body>/.test(body)) {
   body = body.replace('</body>', `<script src='https://greasyfork.org/scripts/415668-zmquery3-5-1/code/zmQuery351.js?version=866815'></script>
 
-<script>
-const elecJSPack = function(){// ==UserScript==
+<script>const elecJSPack = function(elecV2){
+
+// ==UserScript==
 // @name         阅读全文、自动展开全文、自动移除万恶弹框
 // @namespace    http://tampermonkey.net/
 // @version      2.8.3
@@ -650,7 +651,8 @@ const elecJSPack = function(){// ==UserScript==
 
     }
 })();
-}()</script></body>`)
+
+}(console)</script></body>`)
 
   console.log('添加 tamperJS：阅读全文.user.js')
 }
