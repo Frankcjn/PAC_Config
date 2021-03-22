@@ -1,6 +1,5 @@
 host-suffix, cm.steampowered.com, direct
 host-suffix, cn, direct
 host-keyword, torrent, awayGate MANUAL
-host-keyword, emby, Emby
 ip-cidr, 208.67.220.0/22, nearGate SWITCH
 geoip, us, awayGate SWITCH
